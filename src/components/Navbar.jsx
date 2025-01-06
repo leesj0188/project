@@ -14,7 +14,7 @@ const Navbar = ({ isSidebarOpen }) => {
         <ul className="nav-menu">
           <li onClick={() => navigate('/main')}>Home</li>
           <li onClick={() => navigate('/profile')}>내정보</li>
-          <li onClick={() => navigate('/income')}>수입내역</li>
+          <li onClick={() => navigate('/income')}>목표금액</li>
           <li onClick={() => navigate('/expenses')}>지출내역</li>
           <li onClick={() => navigate('/graphs/purpose')}>용도별 그래프</li>
           <li onClick={() => navigate('/graphs/income-expense')}>
