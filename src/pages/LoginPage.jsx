@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../style/LoginPage.scss';
 import SignupPage from './SignUpPage';
 
 const LoginPage = () => {
   const [isSignupOpen, SetIsSignupOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const openSignupModal = () => [SetIsSignupOpen(true)];
-  const closeSignupModal = () => [SetIsSignupOpen(false)];
+  const openSignupModal = () => SetIsSignupOpen(true);
+  const closeSignupModal = () => SetIsSignupOpen(false);
+
+  const handleLogin = () => {
+    // 로그인 후 /initial 페이지로 이동
+    navigate('/initial');
+  };
+
   return (
     <div className="login-page-container">
       <h1>Login Page</h1>
@@ -14,7 +22,9 @@ const LoginPage = () => {
       <div className="form">
         <input type="text" placeholder="아이디" className="input-field" />
         <input type="password" placeholder="비밀번호" className="input-field" />
-        <button className="login-button">로그인</button>
+        <button className="login-button" onClick={handleLogin}>
+          로그인
+        </button>
       </div>
       <p className="sign-up-prompt">
         계정이 없으신가요?{' '}
@@ -28,3 +38,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
