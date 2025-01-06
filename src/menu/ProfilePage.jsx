@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../style/ProfilePage.scss';
-import FriendAddModal from './FriendAddModal';
+import FriendAddModal from '../modals/FriendAddModal';
 
 const ProfilePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
